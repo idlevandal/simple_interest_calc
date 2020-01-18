@@ -226,11 +226,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _reset() {
-    principalController.clear();
-    rateController.clear();
-    termController.clear();
-    displayResult = '';
+    // this MUST go before clearing text otherwise textFormFields don't clear!
     _formKey.currentState.reset();
+
+    principalController.text = '';
+    rateController.text = '';
+    termController.text = '';
+    displayResult = '';
     _currentItemSelected = _currencyMap[1]['name'];
   }
 }
