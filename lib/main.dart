@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:intl/intl.dart";
+import 'package:validators/validators.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,10 +69,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     keyboardType: TextInputType.number,
                     style: textStyle,
                     validator: (String value) {
-                      return value.isEmpty ? 'Please enter prinicpal amount!' : null;
+                      if (value.isEmpty) {
+                        return 'Please enter prinicpal amount!';
+                      } else if (!isNumeric(value)){
+                        principalController.text = '';
+                        return 'Please enter only numerice values';
+                      } else {
+                        return null;
+                      }
                     },
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 12.0),
+                      contentPadding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
                         labelText: 'Principal',
                         hintText: 'Enter Principal e.g. 1',
                         errorStyle: TextStyle(
@@ -89,10 +97,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     keyboardType: TextInputType.number,
                     style: textStyle,
                     validator: (String value) {
-                      return value.isEmpty ? 'Please enter interest rate' : null;
+                      if (value.isEmpty) {
+                        return 'Please enter interest rate';
+                      } else if (!isNumeric(value)){
+                        rateController.text = '';
+                        return 'Please enter only numerice values';
+                      } else {
+                        return null;
+                      }
                     },
                     decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 12.0),
+                        contentPadding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
                         labelText: 'Rate of Interest',
                         hintText: 'In percent',
                         errorStyle: TextStyle(
@@ -112,10 +127,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           keyboardType: TextInputType.number,
                           style: textStyle,
                           validator: (String value) {
-                            return value.isEmpty ? 'Please enter the term' : null;
+                            if (value.isEmpty) {
+                              return 'Please enter the term';
+                            } else if (!isNumeric(value)){
+                              termController.text = '';
+                              return 'Numeric values only!';
+                            } else {
+                              return null;
+                            }
                           },
                           decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 12.0),
+                              contentPadding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
                               labelText: 'Term',
                               hintText: 'Time in years',
                               errorStyle: TextStyle(
