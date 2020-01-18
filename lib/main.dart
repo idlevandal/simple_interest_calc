@@ -71,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       return value.isEmpty ? 'Please enter prinicpal amount!' : null;
                     },
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 12.0),
                         labelText: 'Principal',
                         hintText: 'Enter Principal e.g. 1',
                         errorStyle: TextStyle(
@@ -91,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       return value.isEmpty ? 'Please enter interest rate' : null;
                     },
                     decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 12.0),
                         labelText: 'Rate of Interest',
                         hintText: 'In percent',
                         errorStyle: TextStyle(
@@ -113,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             return value.isEmpty ? 'Please enter the term' : null;
                           },
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 12.0),
                               labelText: 'Term',
                               hintText: 'Time in years',
                               errorStyle: TextStyle(
@@ -150,6 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     Expanded(
                       child: RaisedButton(
+                        padding: EdgeInsets.symmetric(vertical: 10.0),
                         color: Theme.of(context).accentColor,
                         textColor: Theme.of(context).primaryColorDark,
                         child: Text(
@@ -167,6 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Expanded(
                       child: RaisedButton(
+                        padding: EdgeInsets.symmetric(vertical: 10.0),
                         color: Theme.of(context).primaryColorDark,
                         textColor: Theme.of(context).primaryColorLight,
                         child: Text(
