@@ -1,4 +1,4 @@
-# simple_interest_calc2
+# simple interest calculator
 
 A Flutter application using forms & form validation
 
