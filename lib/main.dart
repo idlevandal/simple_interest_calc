@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         return 'Please enter prinicpal amount!';
                       } else if (!isNumeric(value)){
                         principalController.text = '';
-                        return 'Please enter only numerice values';
+                        return 'Numeric values only!';
                       } else {
                         return null;
                       }
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         return 'Please enter interest rate';
                       } else if (!isNumeric(value)){
                         rateController.text = '';
-                        return 'Please enter only numerice values';
+                        return 'Numeric values only!';
                       } else {
                         return null;
                       }
@@ -169,6 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
+              Divider(color: Colors.grey[500],),
               Padding(
                 padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                 child: Row(
