@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:intl/intl.dart";
 import 'package:validators/validators.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -175,13 +176,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      child: RaisedButton(
-                        padding: EdgeInsets.symmetric(vertical: 10.0),
+                      child: RaisedButton.icon(
+                        icon: Icon(FontAwesomeIcons.calculator),
                         color: Theme.of(context).accentColor,
                         textColor: Theme.of(context).primaryColorDark,
-                        child: Text(
-                          'Calculate',
-                          textScaleFactor: 1.5,
+                        label: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10.0),
+                          child: Text(
+                            'Calculate',
+                            textScaleFactor: 1.5,
+                          ),
                         ),
                         onPressed: () {
                           setState(() {
@@ -193,13 +197,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     Expanded(
-                      child: RaisedButton(
-                        padding: EdgeInsets.symmetric(vertical: 10.0),
+                      child: RaisedButton.icon(
+                        icon: Icon(FontAwesomeIcons.undo),
                         color: Theme.of(context).primaryColorDark,
                         textColor: Theme.of(context).primaryColorLight,
-                        child: Text(
-                          'Reset',
-                          textScaleFactor: 1.5,
+                        label: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10.0),
+                          child: Text(
+                            'Reset',
+                            textScaleFactor: 1.5,
+                          ),
                         ),
                         onPressed: () {
                           setState(() {
@@ -214,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: EdgeInsets.all(_minimumPadding * 2),
                 child: Text(
-                  displayResult,
+                  displayResult.length < 1 ? displayResult : 'Total: $displayResult',
                   style: textStyle,
                 ),
               )
